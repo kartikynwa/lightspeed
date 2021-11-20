@@ -15,12 +15,9 @@ author = "El Carpet"
 ogimage = "lightning.png"
 
 zola = true
-netlify = true
-maintained_with_love = true
 
 footer_links = [
     {url = "$BASE_URL/about", name = "About"},
     {url = "$BASE_URL/atom.xml", name = "RSS"},
-    {url = "https://github.com/carpetscheme/lightspeed", name = "Source on Github"},
+    {url = "https://github.com/kartikynwa/lightspeed", name = "Theme"},
 ]
-

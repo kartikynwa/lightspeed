@@ -49,10 +49,10 @@
 
       {% block header %}
       <header role="banner">
-        <h3 style="margin-top:0;">
-          <a href="{{ config.base_url | safe }}" title="Home">{{ config.title }}</a>
-          <br /><small>{{ config.description }}</small>
+        <h3 class="title" style="margin-top:0;">
+          <a href="{{ config.base_url | safe }}" title="Home">{{ config.title }} (◕◡◕✿)</a>
         </h3>
+        <div class="subtitle">{{ config.description }}</div>
       </header>
       <hr />
       {% endblock header %}
@@ -68,6 +68,7 @@
       {% block footer %}
       <footer role="contentinfo">
         <hr />
+        <small>
         {% if config.extra.footer_links %}
         <nav style="margin-bottom:1rem;" role="navigation">
           {% for item in config.extra.footer_links %}
@@ -79,11 +80,7 @@
         </nav>
         {% endif %}
         {% block taglines %}
-        <small>
-          {%- if config.extra.zola or config.extra.zola is undefined -%}Built with <a href="https://www.getzola.org/">Zola</a>{%- endif -%}
-          {%- if config.extra.netlify %} & hosted on <a href="https://netlify.com">Netlify</a>{%- endif -%}
-          {%- if config.extra.zola or config.extra.zola is undefined -%}.<br />{%- endif %}
-          {% if config.extra.maintained_with_love or config.extra.maintained_with_love is undefined%}Maintained with &hearts; for the web.<br />{% endif %}
+          Built with <a href="https://www.getzola.org/">Zola</a>.<br />
           {% if config.extra.footer_tagline %}{{ config.extra.footer_tagline }}{% endif %}
         </small>
         {% endblock taglines %}
