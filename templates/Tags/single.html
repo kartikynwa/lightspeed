@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}{{ term.name }} &middot; {{ config.title }}{% endblock title %}
+{% block description %}{{ term.name | default(value=config.description) }}{% endblock description %}
+
+{% block ogtitle %}{{ term.name }} - {{ config.title }}{% endblock ogtitle %}
+{% block ogdesc %}{{ term.name | default(value=config.description) }}{% endblock ogdesc %}
+{% block ogurl %}{{ current_url | safe }}{% endblock ogurl%}
+
+{% block content %}
+<h3>Tag: {{ term.name }}</h3>
+<ul class="homepage-list">
+  {% for post in term.pages %}
+    {{ macros::post_in_list(post=post) }}
+  {% endfor %}
+</ul>
+{% endblock content %}

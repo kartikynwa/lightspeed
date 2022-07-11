@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}{{ taxonomy.name }} &middot; {{ config.title }}{% endblock title %}
+{% block description %}{{ taxonomy.name | default(value=config.description) }}{% endblock description %}
+
+{% block ogtitle %}{{ taxonomy.name }} - {{ config.title }}{% endblock ogtitle %}
+{% block ogdesc %}{{ taxonomy.name | default(value=config.description) }}{% endblock ogdesc %}
+{% block ogurl %}{{ current_url | safe }}{% endblock ogurl%}
+
+{% block content %}
+<h3>{{ taxonomy.name }}</h3>
+<ul class="homepage-list">
+  {% for term in terms %}
+    {{ macros::term_in_list(term=term) }}
+  {% endfor %}
+</ul>
+{% endblock content %}

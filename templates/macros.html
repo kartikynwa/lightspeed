@@ -5,3 +5,8 @@
 </li>
 {% endmacro post_in_list %}
 
+{% macro term_in_list(term) %}
+<li>
+  <a href="{{ term.permalink | safe }}">{{ term.name }}</a>
+</li>
+{% endmacro term_in_list %}

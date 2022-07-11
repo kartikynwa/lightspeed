@@ -58,11 +58,7 @@
       {% endblock header %}
 
       {% block content %}
-      <ul class="homepage-list">
-        {% for post in section.pages %}
-          {{ macros::post_in_list(post=post) }}
-        {% endfor %}
-      </ul>
+      {{ section.content | safe }}
       {% endblock content %}
 
       {% block footer %}
